@@ -1,0 +1,21 @@
+# Routes
+# ~~~~
+
+# General sisilisko CRUD routes
+GET     /api/dashboard/list                 controllers.DashboardCtrl.list
+GET     /api/dashboard/:id                  controllers.DashboardCtrl.fetch(id: Long)
+POST    /api/dashboard                      controllers.DashboardCtrl.create()
+PUT     /api/dashboard/:id                  controllers.DashboardCtrl.update(id: Long)
+DELETE  /api/dashboard/:id                  controllers.DashboardCtrl.delete(id: Long)
+
+GET     /api/widget/list/:dashboardId       controllers.WidgetCtrl.list(dashboardId: Long)
+GET     /api/widget/:id                     controllers.WidgetCtrl.fetch(id: Long)
+POST    /api/widget                         controllers.WidgetCtrl.create()
+PUT     /api/widget/:id                     controllers.WidgetCtrl.update(id: Long)
+DELETE  /api/widget/:id                     controllers.WidgetCtrl.delete(id: Long)
+
+# Sisilisko websocket
+GET     /ws                                 controllers.WsCtrl.ws
+
+# Serve Sisilisko SPA & static stuff
+GET     /*file                              controllers.Assets.at(path="/public/", file)
