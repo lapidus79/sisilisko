@@ -8,7 +8,7 @@ Sisilisko is a Geckoboard style application implemented in Akka & Play (Java fla
 
 Basically you have an Akka ActorSytem with dashboards which in turn have widgets and they all run as actors. An enduser initiates a websocket connection and a ClientActor is created, this actor in turn subscribes to a dashboard(s) and then starts to receive updates of changes in dashboard & widget actor states.
 
-Currently dashboard and widget conf data is stored in a blocking SQL database. For interacting this resource a round robin router strategy has been used with a dedicated execution context.
+Currently dashboard and widget conf data is stored in a blocking SQL database. For interacting with this resource a round-robin router strategy has been used with a dedicated execution context.
 
 The app also contains simple REST endpoints for dashboard/widget CRUD management.
 
